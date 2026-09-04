@@ -1,6 +1,10 @@
 from math import e
 from dataclasses import dataclass, field
-from fractal_research.core.geometry import Point2D
+
+from fractal_research.fractals.puzzle.side_pattern import (
+    PUZZLE_SIDE_PATTERN,
+    SidePatternConfig,
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -9,8 +13,37 @@ class CanvasConfig:
 
     width: int = 1200
     height: int = 630
+
+    padding: float = 40.0
+
     title: str = "Puzzle Fractal"
     background_color: str = "white"
+
+    def __post_init__(self) -> None:
+        if self.width <= 0:
+            raise ValueError(
+                "Canvas width must be greater than zero."
+            )
+
+        if self.height <= 0:
+            raise ValueError(
+                "Canvas height must be greater than zero."
+            )
+
+        if self.padding < 0:
+            raise ValueError(
+                "Canvas padding cannot be negative."
+            )
+
+        if 2 * self.padding >= self.width:
+            raise ValueError(
+                "Canvas padding is too large for its width."
+            )
+
+        if 2 * self.padding >= self.height:
+            raise ValueError(
+                "Canvas padding is too large for its height."
+            )
 
 
 @dataclass(frozen=True, slots=True)
@@ -26,45 +59,13 @@ class TurtleConfig:
 
 @dataclass(frozen=True, slots=True)
 class PuzzleFractalConfig:
-    """Parameters controlling the geometry of the Puzzle Fractal."""
 
-    start_position: Point2D = field(
-        default_factory=lambda: Point2D(
-            x=-300.0,
-            y=0.0,
-        )
-    )
-
-    polygon_side_count: int = 7
-
+    polygon_side_count: int = 4
     recursion_depth: int = 5
-    side_length: float = 300.0
-
+    base_side_length: float = 400.0
     scale_factor: float = e
 
-    turn_angle_degrees: float = 120.0
-    arc_angle_degrees: float = 180.0
-
-    def __post_init__(self) -> None:
-        if self.polygon_side_count < 3:
-            raise ValueError(
-                "polygon_side_count must be at least 3."
-            )
-
-        if self.recursion_depth < 0:
-            raise ValueError(
-                "recursion_depth must be greater than or equal to zero."
-            )
-
-        if self.side_length <= 0:
-            raise ValueError(
-                "side_length must be greater than zero."
-            )
-
-        if self.scale_factor <= 0:
-            raise ValueError(
-                "scale_factor must be greater than zero."
-            )
+    side_pattern: SidePatternConfig = PUZZLE_SIDE_PATTERN
 
 
 @dataclass(frozen=True, slots=True)

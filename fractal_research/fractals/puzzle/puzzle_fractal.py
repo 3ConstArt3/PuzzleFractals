@@ -6,7 +6,7 @@ from fractal_research.core.drawing_commands import (
     Turn,
     TurnDirection,
 )
-from fractal_research.core.geometry import Point2D
+
 from fractal_research.fractals.puzzle.side_generator import (
     PuzzleFractalSideGenerator,
 )
@@ -24,12 +24,6 @@ class PuzzleFractal:
         self.side_generator = PuzzleFractalSideGenerator(
             config
         )
-
-    @property
-    def start_position(self) -> Point2D:
-        """Returns the initial position of the fractal."""
-
-        return self.config.start_position
 
     @property
     def polygon_exterior_angle_degrees(self) -> float:
@@ -60,7 +54,7 @@ class PuzzleFractal:
             self.config.polygon_side_count
         ):
             yield from self.side_generator.generate_side(
-                side_length=self.config.side_length,
+                side_length=self.config.base_side_length,
                 recursion_depth=self.config.recursion_depth,
             )
 
