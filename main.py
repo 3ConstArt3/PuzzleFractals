@@ -1,13 +1,34 @@
+from pathlib import Path
+
 from fractal_research.application import FractalApplication
+from fractal_research.config.loader import PuzzleFractalConfigLoader
 from fractal_research.config.settings import ApplicationConfig
-from fractal_research.fractals.puzzle.puzzle_fractal import PuzzleFractal
+from fractal_research.fractals.puzzle.puzzle_fractal import (
+    PuzzleFractal,
+)
 from fractal_research.layout.auto_fit_layout import AutoFitLayout
-from fractal_research.rendering.turtle_renderer import TurtleRenderer
+from fractal_research.rendering.turtle_renderer import (
+    TurtleRenderer,
+)
 
 
 def main() -> None:
 
-    config = ApplicationConfig()
+    project_root = Path(__file__).resolve().parent
+
+    config_path = (
+        project_root
+        / "configs"
+        / "puzzle_default.json"
+    )
+
+    fractal_config = PuzzleFractalConfigLoader.load(
+        config_path
+    )
+
+    config = ApplicationConfig(
+        fractal=fractal_config
+    )
 
     fractal = PuzzleFractal(
         config=config.fractal

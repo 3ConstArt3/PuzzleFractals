@@ -27,11 +27,7 @@ class PuzzleFractal:
 
     @property
     def polygon_exterior_angle_degrees(self) -> float:
-        """Returns the exterior angle of the regular polygon."""
-
-        return (
-            360.0 / self.config.polygon_side_count
-        )
+        return 360.0 / self.config.side_count
 
     def generate(self) -> Iterator[DrawingCommand]:
         """Generates the complete polygonal Puzzle Fractal."""
@@ -50,9 +46,7 @@ class PuzzleFractal:
             polygon_rotation - side_rotation
         )
 
-        for _ in range(
-            self.config.polygon_side_count
-        ):
+        for _ in range(self.config.side_count):
             yield from self.side_generator.generate_side(
                 side_length=self.config.base_side_length,
                 recursion_depth=self.config.recursion_depth,
