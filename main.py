@@ -1,13 +1,13 @@
 from pathlib import Path
 
-from fractal_research.application import FractalApplication
-from fractal_research.config.loader import PuzzleFractalConfigLoader
-from fractal_research.config.settings import ApplicationConfig
-from fractal_research.fractals.puzzle.puzzle_fractal import (
+from application import FractalApplication
+from config.loader import PuzzleFractalConfigLoader
+from config.settings import ApplicationConfig
+from fractals.puzzle.puzzle_fractal import (
     PuzzleFractal,
 )
-from fractal_research.layout.auto_fit_layout import AutoFitLayout
-from fractal_research.rendering.turtle_renderer import (
+from layout.auto_fit_layout import AutoFitLayout
+from rendering.turtle_renderer import (
     TurtleRenderer,
 )
 

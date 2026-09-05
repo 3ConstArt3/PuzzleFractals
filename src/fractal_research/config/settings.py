@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 
-from fractal_research.fractals.puzzle.side_pattern import (
+from fractals.puzzle.side_pattern import (
     SidePatternConfig,
 )
 

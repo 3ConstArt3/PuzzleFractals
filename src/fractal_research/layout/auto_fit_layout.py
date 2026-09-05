@@ -1,8 +1,8 @@
 import math
 
 from dataclasses import dataclass
-from fractal_research.config.settings import CanvasConfig
-from fractal_research.core.geometry import BoundingBox, Point2D
+from config.settings import CanvasConfig
+from core.geometry import BoundingBox, Point2D
 
 
 @dataclass(frozen=True, slots=True)

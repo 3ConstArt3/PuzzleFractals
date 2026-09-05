@@ -1,6 +1,6 @@
 from collections.abc import Iterable, Iterator
 
-from fractal_research.core.drawing_commands import (
+from core.drawing_commands import (
     Arc,
     DrawingCommand,
     Forward,

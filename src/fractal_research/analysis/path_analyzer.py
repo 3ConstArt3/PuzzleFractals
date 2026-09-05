@@ -1,14 +1,14 @@
 import math
 from collections.abc import Iterable
 
-from fractal_research.core.drawing_commands import (
+from core.drawing_commands import (
     Arc,
     DrawingCommand,
     Forward,
     Turn,
     TurnDirection,
 )
-from fractal_research.core.geometry import BoundingBox, Point2D
+from core.geometry import BoundingBox, Point2D
 
 
 class PathAnalyzer:

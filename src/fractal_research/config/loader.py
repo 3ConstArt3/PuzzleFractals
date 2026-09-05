@@ -3,10 +3,10 @@ import math
 from pathlib import Path
 from typing import Any
 
-from fractal_research.config.errors import ConfigValidationError
-from fractal_research.config.settings import PuzzleFractalConfig
-from fractal_research.core.drawing_commands import TurnDirection
-from fractal_research.fractals.puzzle.side_pattern import (
+from config.errors import ConfigValidationError
+from config.settings import PuzzleFractalConfig
+from core.drawing_commands import TurnDirection
+from fractals.puzzle.side_pattern import (
     ArcRule,
     ForwardRule,
     RecursiveSide,

@@ -1,19 +1,19 @@
 import turtle
 from collections.abc import Iterable
 
-from fractal_research.config.settings import (
+from config.settings import (
     CanvasConfig,
     TurtleConfig,
 )
-from fractal_research.core.drawing_commands import (
+from core.drawing_commands import (
     Arc,
     DrawingCommand,
     Forward,
     Turn,
     TurnDirection,
 )
-from fractal_research.core.geometry import Point2D
-from fractal_research.rendering.renderer import Renderer
+from core.geometry import Point2D
+from rendering.renderer import Renderer
 
 
 class TurtleRenderer(Renderer):

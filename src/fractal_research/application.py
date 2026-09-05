@@ -1,8 +1,8 @@
-from fractal_research.analysis.path_analyzer import PathAnalyzer
-from fractal_research.core.drawing_transforms import scale_commands
-from fractal_research.fractals.puzzle.puzzle_fractal import PuzzleFractal
-from fractal_research.layout.auto_fit_layout import AutoFitLayout
-from fractal_research.rendering.renderer import Renderer
+from analysis.path_analyzer import PathAnalyzer
+from core.drawing_transforms import scale_commands
+from fractals.puzzle.puzzle_fractal import PuzzleFractal
+from layout.auto_fit_layout import AutoFitLayout
+from rendering.renderer import Renderer
 
 
 class FractalApplication:

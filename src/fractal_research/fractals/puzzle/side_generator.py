@@ -1,14 +1,14 @@
 from collections.abc import Iterator
 
-from fractal_research.config.settings import PuzzleFractalConfig
-from fractal_research.core.drawing_commands import (
+from config.settings import PuzzleFractalConfig
+from core.drawing_commands import (
     Arc,
     DrawingCommand,
     Forward,
     Turn,
     TurnDirection,
 )
-from fractal_research.fractals.puzzle.side_pattern import (
+from fractals.puzzle.side_pattern import (
     ArcRule,
     ForwardRule,
     RecursiveSide,

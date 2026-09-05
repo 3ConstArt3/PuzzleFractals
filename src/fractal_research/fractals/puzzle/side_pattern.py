@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import TypeAlias
 
-from fractal_research.core.drawing_commands import TurnDirection
+from core.drawing_commands import TurnDirection
 
 
 @dataclass(frozen=True, slots=True)

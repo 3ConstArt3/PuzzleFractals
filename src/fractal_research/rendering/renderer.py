@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from collections.abc import Iterable
 
-from fractal_research.core.drawing_commands import DrawingCommand
-from fractal_research.core.geometry import Point2D
+from core.drawing_commands import DrawingCommand
+from core.geometry import Point2D
 
 
 class Renderer(ABC):
